@@ -19,16 +19,14 @@ public class Main {
 
     private static final Scanner scanner = new Scanner(System.in);
 
-    private static  final String filePath = "test_data/visitors.txt";
+    private static  final String filePath = "saves/visitors.txt";
     private static final GymRepository repository = new GymRepository(filePath);
 
     public static void main(String[] args) {
         showMainMenu();
     }
 
-    // =========================
     // MAIN MENU
-    // =========================
 
     public static void showMainMenu() {
 
@@ -344,7 +342,7 @@ public class Main {
                                 true
                         );
 
-                        System.out.println("Visitors exported and sorted by ID!");
+                        System.out.println("Visitors exported and sorted by name!");
                     }
                     catch (Exception e) {
 
@@ -393,8 +391,6 @@ public class Main {
             }
         }
     }
-
-    // SAFE INTEGER INPUT
 
     public static int readInt() {
 
