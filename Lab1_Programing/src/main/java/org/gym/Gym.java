@@ -38,6 +38,10 @@ public class Gym {
         return new ArrayList<>(visitors);
     }
 
+    public List<Trainer> getTrainers() {
+        return new ArrayList<>(trainers);
+    }
+
     public Trainer getTrainerById(int id) {
         for (Trainer t : trainers) {
             if (t.getId() == id) return t;
@@ -87,15 +91,6 @@ public class Gym {
     }
 
     // BUSINESS LOGIC
-    public boolean visitGym(int visitorId) {
-        Visitor v = getVisitorById(visitorId);
-
-        if (v == null) return false;
-        if (!v.canVisitGym()) return false;
-
-        v.addVisit(LocalDateTime.now());
-        return true;
-    }
 
     public boolean assignTrainer(int visitorId, int trainerId) {
         Visitor v = getVisitorById(visitorId);
@@ -104,11 +99,5 @@ public class Gym {
         if (v == null || t == null) return false;
 
         return t.addClient(v);
-    }
-
-    public List<LocalDateTime> getVisitHistory(int visitorId) {
-        Visitor v = getVisitorById(visitorId);
-        if (v == null) return new ArrayList<>();
-        return v.getVisitHistory();
     }
 }

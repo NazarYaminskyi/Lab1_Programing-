@@ -169,8 +169,6 @@ public class GymTest {
     @Test
     public void gym_visit_validVisitor_shouldReturnTrue() {
 
-        Gym gym = new Gym("Power Gym");
-
         Visitor v = new Visitor(
                 1,
                 "Nazar",
@@ -182,19 +180,8 @@ public class GymTest {
                 )
         );
 
-        gym.addVisitor(v);
-
-        assertTrue(gym.visitGym(1));
+        assertTrue(v.visitGym());
     }
-
-    @Test
-    public void gym_visit_invalidVisitorId_shouldReturnFalse() {
-
-        Gym gym = new Gym("Power Gym");
-
-        assertFalse(gym.visitGym(999));
-    }
-
 
     // Visitor validation tests
 

@@ -60,6 +60,14 @@ public class Visitor {
         this.membership = membership;
     }
 
+    public boolean visitGym() {
+
+        if (!this.canVisitGym()) return false;
+
+        this.addVisit(LocalDateTime.now());
+        return true;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
