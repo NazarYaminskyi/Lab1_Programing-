@@ -11,8 +11,8 @@ public class GymRepository {
 
     private final String filePath;
 
-    public GymRepository(String filePath) {
-        this.filePath = filePath;
+    public GymRepository(String path) {
+        this.filePath = path;
     }
 
 
