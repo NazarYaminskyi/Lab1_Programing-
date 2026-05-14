@@ -43,21 +43,21 @@ public class Visitor {
         return visitHistory;
     }
 
-    public void setName(String name) {
+    public void setName(String _name) {
 
-        if (name == null || name.isBlank()) {
+        if (_name == null || _name.isBlank()) {
             throw new IllegalArgumentException("Name cannot be empty");
         }
 
-        if (name.length() > 100) {
+        if (_name.length() > 100) {
             throw new IllegalArgumentException("Name is too long");
         }
 
-        this.name = name.trim();
+        this.name = _name.trim();
     }
 
-    public void setMembership(Membership membership) {
-        this.membership = membership;
+    public void setMembership(Membership _membership) {
+        this.membership = _membership;
     }
 
     public boolean visitGym() {
@@ -66,14 +66,6 @@ public class Visitor {
 
         this.addVisit(LocalDateTime.now());
         return true;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Visitor)) return false;
-        Visitor visitor = (Visitor) o;
-        return id == visitor.id;
     }
 
     @Override

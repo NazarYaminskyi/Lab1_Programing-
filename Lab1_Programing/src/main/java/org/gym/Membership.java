@@ -37,36 +37,28 @@ public class Membership {
         return active;
     }
 
-    public void setActive(boolean active) {
+    public void setActive(boolean _active) {
 
-        if (!active && endDate.isAfter(LocalDate.now())) {
+        if (!_active && endDate.isAfter(LocalDate.now())) {
             System.out.println("Membership was manually deactivated.");
         }
 
-        this.active = active;
+        this.active = _active;
     }
 
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
+    public void setStartDate(LocalDate date) {
+        this.startDate = date;
     }
 
-    public void setEndDate(LocalDate endDate) {
+    public void setEndDate(LocalDate date) {
 
-        if (endDate.isBefore(startDate)) {
+        if (date.isBefore(startDate)) {
             throw new IllegalArgumentException(
                     "End date cannot be before start date"
             );
         }
 
-        this.endDate = endDate;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Membership)) return false;
-        Membership that = (Membership) o;
-        return id == that.id;
+        this.endDate = date;
     }
 
     @Override

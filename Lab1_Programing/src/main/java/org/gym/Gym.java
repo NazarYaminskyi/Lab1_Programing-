@@ -68,17 +68,17 @@ public class Gym {
         return false;
     }
 
-    public void setName(String name) {
+    public void setName(String _name) {
 
-        if (name == null || name.isBlank()) {
+        if (_name == null || _name.isBlank()) {
             throw new IllegalArgumentException("Gym name cannot be empty");
         }
 
-        if (name.length() > 200) {
+        if (_name.length() > 200) {
             throw new IllegalArgumentException("Gym name is too long");
         }
 
-        this.name = name.trim();
+        this.name = _name.trim();
     }
 
     public String getName() {
@@ -89,8 +89,6 @@ public class Gym {
 
         return name;
     }
-
-    // BUSINESS LOGIC
 
     public boolean assignTrainer(int visitorId, int trainerId) {
         Visitor v = getVisitorById(visitorId);

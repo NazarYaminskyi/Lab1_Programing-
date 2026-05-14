@@ -55,38 +55,30 @@ public class Trainer {
         this.name = name.trim();
     }
 
-    public void setSpecialization(String specialization) {
-
-        if (specialization == null || specialization.isBlank()) {
+    public void setSpecialization(String _specialization) {
+        
+        if (_specialization == null || _specialization.isBlank()) {
             throw new IllegalArgumentException("Specialization cannot be empty");
         }
 
-        if (specialization.length() > 50) {
+        if (_specialization.length() > 50) {
             throw new IllegalArgumentException("Specialization is too long");
         }
 
-        this.specialization = specialization;
+        this.specialization = _specialization;
     }
 
-    public boolean deleteClientById(int id) {
+    public boolean deleteClientById(int _id) {
 
         for (Visitor visitor : clients) {
 
-            if (visitor.getId() == id) {
+            if (visitor.getId() == _id) {
                 clients.remove(visitor);
                 return true;
             }
         }
 
         return false;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Trainer)) return false;
-        Trainer trainer = (Trainer) o;
-        return id == trainer.id;
     }
 
     @Override
