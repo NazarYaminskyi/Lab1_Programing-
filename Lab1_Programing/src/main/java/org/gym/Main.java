@@ -207,7 +207,7 @@ public class Main {
                     System.out.print("Enter trainers name: ");
                     String name = scanner.nextLine();
 
-                    System.out.print("Enter trainers name: ");
+                    System.out.print("Enter trainers specialization: ");
                     String spec = scanner.nextLine();
 
                     Trainer trainer = new Trainer(nextTrainerId, name, spec);
